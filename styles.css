@@ -1,0 +1,123 @@
+.card-container {
+    position: relative;
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-number {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.card-image {
+    width: 100%;
+    height: 500px; /* Adjusted for 744x1051 aspect ratio */
+    object-fit: contain;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    background: white;
+}
+
+.card-image:hover {
+    transform: scale(1.02);
+}
+
+/* Custom popup styles */
+.card-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    touch-action: none;
+}
+
+.popup-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    touch-action: none;
+}
+
+.popup-image {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.popup-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.popup-close:hover {
+    color: #ddd;
+}
+
+/* Body scroll lock */
+body.popup-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+/* Zoom controls */
+.zoom-controls {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.zoom-btn {
+    background: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.zoom-btn:hover {
+    background: #ddd;
+}
+
+/* Lightbox customization */
+.lb-data .lb-caption {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.lb-data .lb-number {
+    font-size: 14px;
+    color: #666;
+} 
