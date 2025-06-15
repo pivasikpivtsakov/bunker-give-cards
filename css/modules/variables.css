@@ -4,11 +4,12 @@
     --bg-secondary: #f8f9fa;
     --text-primary: #333333;
     --text-secondary: #666666;
-    --card-bg: #f8f9fa;
+    --card-bg: rgb(248, 249, 250, 0.9);
     --card-shadow: rgba(0, 0, 0, 0.1);
     --popup-bg: rgba(0, 0, 0, 0.9);
     --popup-text: #ffffff;
     --popup-close-hover: #dddddd;
+    --container-blur: 8px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,10 +18,11 @@
         --bg-secondary: #2d2d2d;
         --text-primary: #ffffff;
         --text-secondary: #cccccc;
-        --card-bg: #2d2d2d;
+        --card-bg: rgba(45, 45, 45, 0.9);
         --card-shadow: rgba(0, 0, 0, 0.3);
         --popup-bg: rgba(0, 0, 0, 0.95);
         --popup-text: #ffffff;
         --popup-close-hover: #666666;
+        --container-blur: 8px;
     }
 } 
