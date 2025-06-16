@@ -9,7 +9,7 @@
     z-index: 1000;
     justify-content: center;
     align-items: center;
-    touch-action: none;
+    touch-action: pinch-zoom;
 }
 
 .popup-content {
@@ -43,4 +43,4 @@
 
 .popup-close:hover {
     color: var(--popup-close-hover);
-} 
+}

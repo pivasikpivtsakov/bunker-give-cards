@@ -18,7 +18,7 @@ export function validateCardData(card, categories) {
         typeof card.category === 'string' &&
         typeof card.displayName === 'string' &&
         typeof card.number === 'number' &&
-        categories.has(card.category) &&
+        Object.keys(categories).includes(card.category) &&
         card.number > 0
     );
 } 

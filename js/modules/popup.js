@@ -30,4 +30,4 @@ export function hidePopup() {
     document.body.style.top = '';
     document.body.style.width = '';
     window.scrollTo(0, scrollPosition);
-} 
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,40 +8,45 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container mt-5">
-        <div class="header-container">
-            <h1 class="text-center mb-4">Бункер - Карты</h1>
-        </div>
 
-        <!-- Bunker Type Section -->
-        <div class="bunker-type-section mb-5">
-            <h2 class="text-center mb-3">Тип бункера</h2>
-            <div class="row justify-content-center mb-3">
-                <div class="col-md-6">
-                    <div class="row align-items-center">
-                        <div class="col-md-4">
-                            <label for="bunkerTypeNumber" class="form-label mb-0">Введите номер карты бункера (1-30):</label>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="input-group">
-                                <input type="number" id="bunkerTypeNumber" class="form-control" min="1" max="30" placeholder="Номер карты (1-30)">
-                                <button class="btn btn-primary" id="showBunkerType">Показать</button>
+<body>
+    <div class="full-container pt-5">
+        <div class="container">
+            <div class="header-container">
+                <h1 class="text-center mb-4">Бункер - Карты</h1>
+            </div>
+
+            <!-- Bunker Type Section -->
+            <div class="bunker-type-section mb-5">
+                <h2 class="text-center mb-3">Тип бункера</h2>
+                <div class="row justify-content-center mb-3">
+                    <div class="col-md-6">
+                        <div class="row align-items-center">
+                            <div class="col-md-4">
+                                <label for="bunkerTypeNumber" class="form-label mb-0">Введите номер карты бункера
+                                    (1-30):</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="number" id="bunkerTypeNumber" class="form-control" min="1" max="30"
+                                        placeholder="Номер карты (1-30)">
+                                    <button class="btn btn-primary" id="showBunkerType">Показать</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div id="bunkerTypeContainer" class="row justify-content-center">
+                    <!-- Bunker type card will be displayed here -->
+                </div>
             </div>
-            <div id="bunkerTypeContainer" class="row justify-content-center">
-                <!-- Bunker type card will be displayed here -->
-            </div>
-        </div>
 
-        <div class="text-center mb-4">
-            <button id="dealCards" class="btn btn-primary btn-lg">Выдать карты</button>
-        </div>
-        <div id="cardsContainer" class="row g-4">
-            <!-- Cards will be displayed here -->
+            <div class="text-center mb-4">
+                <button id="dealCards" class="btn btn-primary btn-lg">Выдать карты</button>
+            </div>
+            <div id="cardsContainer" class="row g-4">
+                <!-- Cards will be displayed here -->
+            </div>
         </div>
     </div>
 
@@ -55,4 +61,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="js/app.js"></script>
 </body>
+
 </html>
