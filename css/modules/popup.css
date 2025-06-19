@@ -16,14 +16,14 @@
     position: relative;
     max-width: 90%;
     max-height: 90%;
-    touch-action: none;
+    touch-action: pinch-zoom;
 }
 
 .popup-image {
     max-width: 100%;
     max-height: 90vh;
     object-fit: contain;
-    touch-action: none;
+    touch-action: pinch-zoom;
     user-select: none;
     -webkit-user-drag: none;
 }
