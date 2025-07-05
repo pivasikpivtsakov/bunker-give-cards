@@ -25,7 +25,8 @@ jobs:
 
       - run: zip -r app.zip . --exclude .git/**
 
-      - uses: einaregilsson/beanstalk-deploy@v20
+      - name: Deploy to Elastic Beanstalk
+        uses: einaregilsson/beanstalk-deploy@v20
         with:
           aws_access_key:    ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key:    ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -33,5 +34,4 @@ jobs:
           application_name:  ${{ secrets.EB_APP_NAME }}
           environment_name:  ${{ secrets.EB_ENV_NAME }}
           version_label:     ${{ github.sha }}
-          bucket_name:       ${{ secrets.EB_BUCKET }}
-          bucket_key:        ${{ github.sha }}.zip
+          deployment_package: app.zip
