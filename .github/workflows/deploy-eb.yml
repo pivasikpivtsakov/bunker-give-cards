@@ -5,6 +5,10 @@ on:
     branches:
       - master
 
+permissions:
+  id-token: write   # This is required for requesting the JWT
+  contents: read
+
 jobs:
   deploy:
     name: Build & Deploy to EB
@@ -13,10 +17,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Debug secrets
-        run: |
-          echo "Region: ${{ secrets.AWS_REGION }}"
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
