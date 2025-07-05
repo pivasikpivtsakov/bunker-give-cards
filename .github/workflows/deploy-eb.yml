@@ -2,30 +2,30 @@ name: CI/CD → Elastic Beanstalk
 
 on:
   push:
-    branches:
-      - master
+    branches: [ master ]
 
 jobs:
   deploy:
-    name: Build & Deploy to EB
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+
+      - name: Debug AWS secrets
+        run: |
+          echo "ID len: ${{ secrets.AWS_ACCESS_KEY_ID && secrets.AWS_ACCESS_KEY_ID.length }}"
+          echo "Key len: ${{ secrets.AWS_SECRET_ACCESS_KEY && secrets.AWS_SECRET_ACCESS_KEY.length }}"
+          echo "Region: ${{ secrets.AWS_REGION }}"
 
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v3
         with:
           aws-access-key-id:     ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region:            ${{ secrets.AWS_REGION }}
 
-      - name: Zip application
-        run: zip -r app.zip . --exclude .git/**
+      - run: zip -r app.zip . --exclude .git/**
 
-      - name: Deploy to Elastic Beanstalk
-        uses: einaregilsson/beanstalk-deploy@v20
+      - uses: einaregilsson/beanstalk-deploy@v20
         with:
           aws_access_key:    ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key:    ${{ secrets.AWS_SECRET_ACCESS_KEY }}
