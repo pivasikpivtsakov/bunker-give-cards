@@ -3,7 +3,7 @@ name: CI/CD → Elastic Beanstalk
 on:
   push:
     branches:
-      - main     # or your default branch
+      - master
 
 jobs:
   deploy:
